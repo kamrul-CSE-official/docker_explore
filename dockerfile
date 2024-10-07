@@ -1,5 +1,16 @@
-FROM node:alpine3.19
-COPY . .
+FROM node:20
+
+WORKDIR /index.js
+
+COPY package.json .
+
 RUN npm install
-EXPOSE 3000
+
+
+COPY . .
+
+
+EXPOSE 5000
+
+
 CMD [ "node", "index.js" ]
